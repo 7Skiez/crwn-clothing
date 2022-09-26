@@ -1,9 +1,18 @@
 // import logo from "./logo.svg"
-import Categories from "./components/categories/categories.component"
+import { Routes, Route } from "react-router-dom"
+import Home from "./routes/home/home.component"
+import Navigation from "./routes/navigation/navigation.component"
+
+const Shop = () => <h1>I am the Shop component.</h1>
 
 const App = () => {
   return (
-    <Categories/>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+      </Route>
+    </Routes>
   )
 }
 
